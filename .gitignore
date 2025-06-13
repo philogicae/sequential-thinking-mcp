@@ -12,3 +12,7 @@ wheels/
 # Ruff and Mypy
 .ruff_cache
 .mypy_cache
+
+# Envs
+.env
+.venv
