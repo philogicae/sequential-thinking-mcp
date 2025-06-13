@@ -1,0 +1,29 @@
+[project]
+name = "sequential-thinking-mcp"
+version = "1.0.0"
+description = "Sequential Thinking MCP"
+authors = [{ name = "philogicae" }]
+requires-python = ">=3.10,<4.0"
+readme = "README.md"
+license = "MIT"
+dependencies = [
+    "fastmcp>=2.8.0",
+]
+
+[project.urls]
+Repository = "https://github.com/philogicae/sequential-thinking-mcp"
+Release = "https://github.com/philogicae/sequential-thinking-mcp/releases"
+DeepWiki = "https://deepwiki.com/philogicae/sequential-thinking-mcp"
+
+[project.scripts]
+sequential-thinking-mcp = "sequential_thinking.__main__:cli"
+
+[dependency-groups]
+dev = ["ruff>=0.11.13", "mypy>=1.16.0"]
+
+[tool.hatch.build]
+include = ["sequential_thinking"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
