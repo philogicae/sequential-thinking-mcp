@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
-## [unreleased]
+## [0.2.0] - 2025-06-15
+
+### 🚀 Features
+
+- Add comprehensive sequential thinking instructions and clear thoughts tool
+
+## [0.1.0] - 2025-06-13
 
 ### ⚙️ Miscellaneous Tasks
 
