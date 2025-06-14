@@ -2,11 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.2.0] - 2025-06-15
+## [0.3.0] - 2025-06-15
+
+### 🐛 Bug Fixes
+
+- Remove unused Context parameters and convert clear_thoughts to resource
+
+## [0.2.0] - 2025-06-14
 
 ### 🚀 Features
 
 - Add comprehensive sequential thinking instructions and clear thoughts tool
+
+### ⚙️ Miscellaneous Tasks
+
+- Update changelog for v0.2.0 release with sequential thinking features
 
 ## [0.1.0] - 2025-06-13
 
