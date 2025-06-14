@@ -138,7 +138,7 @@ def think(
     branch_from_thought: int | None = None,
     branch_id: str | None = None,
     needs_more_thoughts: bool | None = None,
-    ctx: Context | None = None,
+    _ctx: Context | None = None,
 ) -> str:
     """
     Facilitates a detailed, step-by-step thinking process for problem-solving and analysis.
@@ -153,7 +153,7 @@ def think(
         branch_from_thought: Branching point thought number
         branch_id: Branch identifier
         needs_more_thoughts: If more thoughts are needed
-        ctx: MCP context
+        _ctx: MCP context (unused)
 
     Returns:
         Response message about the recorded thought
@@ -245,7 +245,7 @@ def think(
 
 
 @mcp.resource("thoughts://history")
-def get_thought_history(ctx: Context | None = None) -> str:
+def get_thought_history() -> str:
     """
     Get the complete thought history as a formatted string.
 
@@ -266,7 +266,7 @@ def get_thought_history(ctx: Context | None = None) -> str:
 
 
 @mcp.resource("thoughts://branches/{branch_id}")
-def get_branch_thoughts(branch_id: str, ctx: Context | None = None) -> str:
+def get_branch_thoughts(branch_id: str) -> str:
     """
     Get the thoughts for a specific branch.
 
@@ -293,7 +293,7 @@ def get_branch_thoughts(branch_id: str, ctx: Context | None = None) -> str:
 
 
 @mcp.resource("thoughts://summary")
-def get_thought_summary(ctx: Context | None = None) -> str:
+def get_thought_summary() -> str:
     """
     Get a summary of all thoughts and branches.
 
@@ -319,8 +319,8 @@ def get_thought_summary(ctx: Context | None = None) -> str:
     return result
 
 
-@mcp.tool()
-def clear_thoughts(ctx: Context | None = None) -> str:
+@mcp.resource("thoughts://clear")
+def clear_thoughts() -> str:
     """
     Clears all recorded thoughts, including history and branches.
 
