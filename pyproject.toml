@@ -6,7 +6,7 @@ authors = [{ name = "philogicae" }]
 requires-python = ">=3.10,<4.0"
 readme = "README.md"
 license = "MIT"
-dependencies = ["fastmcp>=2.8.0"]
+dependencies = ["fastmcp>=2.8.1"]
 
 [project.urls]
 Repository = "https://github.com/philogicae/sequential-thinking-mcp"

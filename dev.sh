@@ -1,1 +1,1 @@
-uv lock && uv sync -U --link-mode=copy && uv run ruff format sequential_thinking && uv run ruff check sequential_thinking && uv run mypy sequential_thinking
+uv lock && uv sync -U --link-mode=copy && uv run ruff format sequential_thinking && uv run ruff check sequential_thinking --fix && uv run mypy sequential_thinking
