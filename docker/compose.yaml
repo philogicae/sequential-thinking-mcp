@@ -2,11 +2,12 @@ name: sequential-thinking-mcp
 
 services:
   sequential-thinking-mcp:
+    container_name: sequential-thinking-mcp
     build:
       context: ..
       dockerfile: docker/Dockerfile
     image: sequential-thinking-mcp
-    container_name: sequential-thinking-mcp
+    restart: unless-stopped
     ports:
       - 8765:8000
     logging:
