@@ -2,11 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.3.0] - 2025-06-15
+## [0.4.0] - 2025-06-20
+
+### 🚜 Refactor
+
+- Simplify sequential thinking server with focused tool recommendations
+
+### ⚙️ Miscellaneous Tasks
+
+- Add --fix flag to ruff check and upgrade fastmcp to 2.8.1
+
+## [0.3.0] - 2025-06-14
 
 ### 🐛 Bug Fixes
 
 - Remove unused Context parameters and convert clear_thoughts to resource
+
+### 📚 Documentation
+
+- Update changelog for v0.3.0 with bug fixes and context cleanup
 
 ## [0.2.0] - 2025-06-14
 
