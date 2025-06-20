@@ -21,7 +21,7 @@ def think(
     """Tool for dynamic, deep and reflective problem-solving via thought logging.
     Supports thread following, revisions, step-tracking, and tool recommendations.
     For each new user message, begin a new thought thread with this tool.
-    Yield now thought after each step, and all threads must reach a final thought.
+    You must log a thought after each step and all threads must reach a final thought.
 
     # Use for:
     - Process user messages in a smarter step-by-step manner.
@@ -72,3 +72,6 @@ def think(
 
     logger.info(f"{log}\nThought: {thought}\nNext: {left_to_be_done}")
     return log
+
+
+# TODO: Add test_mcp_server.py
