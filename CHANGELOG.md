@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.4.0] - 2025-06-20
+## [0.5.0] - 2025-06-20
+
+### 🚜 Refactor
+
+- Simplify thought tracking with improved thread and tool recommendation system
+
+## [0.4.0] - 2025-06-19
 
 ### 🚜 Refactor
 
@@ -11,6 +17,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Add --fix flag to ruff check and upgrade fastmcp to 2.8.1
+- Update changelog for v0.4.0 with refactoring and task updates
 
 ## [0.3.0] - 2025-06-14
 
