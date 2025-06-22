@@ -4,7 +4,7 @@ on: push
 
 jobs:
   test:
-    name: Run ruff and mypy 🧪
+    name: Run ruff, mypy and pytest 🧪
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,6 +22,8 @@ jobs:
         run: uv run ruff check sequential_thinking
       - name: Run mypy
         run: uv run mypy sequential_thinking
+      - name: Run tests
+        run: uv run pytest sequential_thinking
 
   build:
     name: Build distribution 📦
