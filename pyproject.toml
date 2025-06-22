@@ -1,6 +1,6 @@
 [project]
 name = "sequential-thinking-mcp"
-version = "0.5.0"
+version = "0.6.0"
 description = "Sequential Thinking MCP"
 authors = [{ name = "philogicae" }]
 requires-python = ">=3.10,<4.0"
@@ -17,7 +17,7 @@ DeepWiki = "https://deepwiki.com/philogicae/sequential-thinking-mcp"
 sequential-thinking-mcp = "sequential_thinking.__main__:cli"
 
 [dependency-groups]
-dev = ["ruff>=0.11.13", "mypy>=1.16.0"]
+dev = ["ruff>=0.12.0", "pytest>=8.4.1", "pytest-asyncio>=1.0.0", "mypy>=1.16.1"]
 
 [tool.hatch.build]
 include = ["sequential_thinking"]
