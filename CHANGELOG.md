@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.1] - 2025-06-22
+
+### 📚 Documentation
+
+- Clarify thought logging process and improve example in MCP server docstring
+
+### ⚙️ Miscellaneous Tasks
+
+- Add pytest to CI workflow alongside ruff and mypy
+- Bump sequential-thinking-mcp version to 0.6.1
+
 ## [0.6.0] - 2025-06-22
 
 ### 🚀 Features
@@ -15,6 +26,10 @@ All notable changes to this project will be documented in this file.
 ### 🚜 Refactor
 
 - Simplify thought tracking by removing revision flag and remaining steps
+
+### ⚙️ Miscellaneous Tasks
+
+- Update changelog for v0.6.0 release with pytest integration and thought tracking changes
 
 ## [0.5.0] - 2025-06-20
 
