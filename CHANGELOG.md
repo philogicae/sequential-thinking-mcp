@@ -2,11 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.0] - 2025-06-22
+
+### 🚀 Features
+
+- Add pytest integration with async test for MCP server
+
+### 🐛 Bug Fixes
+
+- Typo
+
+### 🚜 Refactor
+
+- Simplify thought tracking by removing revision flag and remaining steps
+
 ## [0.5.0] - 2025-06-20
 
 ### 🚜 Refactor
 
 - Simplify thought tracking with improved thread and tool recommendation system
+
+### ⚙️ Miscellaneous Tasks
+
+- Changelog for v0.5.0
 
 ## [0.4.0] - 2025-06-19
 
