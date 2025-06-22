@@ -12,64 +12,39 @@ mcp: FastMCP[Any] = FastMCP("Sequential Thinking Server")
 def think(
     thread_purpose: str,
     thought: str,
-    thought_number: int,
-    nb_remaining_steps: int,
-    is_revision: bool = False,
+    thought_index: int,
     tool_recommendation: str | None = None,
     left_to_be_done: str | None = None,
 ) -> str:
-    """Tool for dynamic, deep and reflective problem-solving via thought logging.
-    Supports thread following, revisions, step-tracking, and tool recommendations.
+    """Tool for advanced meta-cognition and dynamic reflective problem-solving via thought logging.
+    Supports thread following, step-tracking, self-correction, and tool recommendations.
     For each new user message, begin a new thought thread with this tool.
     You must log a thought after each step and all threads must reach a final thought.
 
-    # Use for:
-    - Process user messages in a smarter step-by-step manner.
-    - Breaking down complex problems.
-    - Iterative planning & design.
-    - Analysis requiring course correction.
-    - Maintaining context over multiple steps.
-    - Getting assistance with tool suggestions.
+    Key functionalities:
+    - Agentic Workflow Orchestration: Guides through complex tasks by breaking them into smart, manageable, traceable steps.
+    - Iterative Refinement: Enables thought revision for self-correction and adaptation to new information or errors.
+    - Tool Recommendation: Suggests specific tools (`tool_recommendation`) to execute planned actions or gather necessary information.
+    - Proactive Planning: Utilizes `left_to_be_done` for explicit future state management and task estimation.
 
-    # Key features:
-    - Defined purpose for the current line of thinking (`thread_purpose`).
-    - Log thoughts sequentially (`thought` and `thought_number`).
-    - Revisions of failed thoughts (`thought_number=<original_num>` and `is_revision=True`).
-    - Optional tool suggestion for the current thought (`tool_recommendation`).
-    - Structured logging of multi-step plans (`left_to_be_done` defined ahead).
-    - Flexible thought progression and estimation (adjust `nb_remaining_steps` up to 10).
+    Args:
+    - `thread_purpose` (str): A concise, high-level objective or thematic identifier for the current thought thread. Essential for organizing complex problem-solving trajectories.
+    - `thought` (str): The detailed, atomic unit of reasoning or action taken by the AI agent at the current step. This forms the core of the agent's internal monologue.
+    - `thought_index` (int): A monotonically increasing integer representing the sequence of thoughts within a specific `thread_purpose`. Crucial for chronological tracking and revision targeting.
+    - `tool_recommendation` (str, optional): A precise, actionable suggestion for the next tool to be invoked, directly following the current thought.
+    - `left_to_be_done` (str, optional): A flexible forward-looking statement outlining the next steps or sub-goals within the current `thread_purpose`. Supports multi-step planning and progress tracking.
 
-    # Tool parameters (to be provided in order):
-    - `thread_purpose`: (str) Purpose for the current line of thinking.
-    - `thought`: (str) Current thinking step/content.
-    - `thought_number`: (int) Sequence number for the current thought/revision.
-    - `is_revision`: (bool, optional) True if this revises a previous thought. Default: False.
-    - `tool_recommendation`: (str, optional) Recommended tool name for the current thought.
-    - `left_to_be_done`: (str, optional) Descriptions of upcoming steps.
-    - `nb_remaining_steps`: (int) Estimated number of thoughts/steps left (up to 10) for current line of thinking.
-
-    # Example of thought process:
-    -> Initial thought:
-    think(thread_purpose="What is inflation?", thought="Must find information about inflation. Consider using 'websearch' tool.", thought_number=1, tool_recommendation="websearch", left_to_be_done="Summarize the findings to respond to the user", nb_remaining_steps=1)
-    -> Action: call websearch
-    -> Revised thought:
-    think(thread_purpose="What is inflation?", thought="Results seem too poor. Refine the search query.", thought_number=1, is_revision=True, tool_recommendation="websearch", left_to_be_done="Summarize the findings to respond to the user", nb_remaining_steps=1)
-    -> Action: retry websearch
-    -> Final thought:
-    think(thread_purpose="What is inflation?", thought="Summarize the findings to present an exhaustive insight to the user.", thought_number=2, nb_remaining_steps=0)
-    -> Action: respond with summary
+    Example of thought process:
+    -> think(thread_purpose="What is inflation?", thought="Must find information about inflation. Consider using 'websearch' tool.", thought_index=1, tool_recommendation="websearch", left_to_be_done="Summarize the findings to respond to the user")
+    -> call websearch
+    -> think(thread_purpose="What is inflation?", thought="Results seem quite poor. Must retry with a more specific query.", thought_index=2, tool_recommendation="websearch", left_to_be_done="Summarize the findings to respond to the user")
+    -> call websearch
+    -> think(thread_purpose="What is inflation?", thought="Summarize the findings to present an exhaustive insight to the user.", thought_index=3)
+    -> respond with summary
     """
-    log = f"Thread purpose: {thread_purpose}\n"
-    index = f"{thought_number}/{thought_number + nb_remaining_steps}"
-    if is_revision:
-        log += f"Thought {index} revised."
-    elif nb_remaining_steps:
-        log += f"Thought {index} logged."
-    else:
-        log += f"Final thought {index} logged. Process complete."
+    log = f"Thread purpose: {thread_purpose}\nThought {thought_index} logged."
     if tool_recommendation:
         log += f" Recommended tool: {tool_recommendation}."
-
     logger.info(f"{log}\nThought: {thought}\nNext: {left_to_be_done}")
     return log
 
