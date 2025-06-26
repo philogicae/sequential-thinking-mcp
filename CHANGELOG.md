@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.2] - 2025-06-26
+
+### 🚜 Refactor
+
+- Improve thought logging with better handling of optional tool and next step fields
+
 ## [0.6.1] - 2025-06-22
 
 ### 📚 Documentation
@@ -12,6 +18,7 @@ All notable changes to this project will be documented in this file.
 
 - Add pytest to CI workflow alongside ruff and mypy
 - Bump sequential-thinking-mcp version to 0.6.1
+- Update changelog for v0.6.1 with pytest integration and doc improvements
 
 ## [0.6.0] - 2025-06-22
 
