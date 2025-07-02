@@ -78,7 +78,6 @@ cd sequential-thinking-mcp
 ```bash
 uv sync --locked
 ```
-
 3.  Run the MCP server (default: stdio):
 ```bash
 uv run -m sequential_thinking
@@ -91,12 +90,10 @@ uv run -m sequential_thinking
 git clone https://github.com/philogicae/sequential-thinking-mcp.git
 cd sequential-thinking-mcp
 ```
-
 2.  Build and run the container using Docker Compose (default port: 8000):
 ```bash
 docker compose up --build -d
 ```
-
 3.  Access container logs:
 ```bash
 docker logs sequential-thinking-mcp -f

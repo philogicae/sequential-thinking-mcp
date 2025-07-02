@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [unreleased]
+
+### 🐛 Bug Fixes
+
+- Update package name from mcp-sequential-thinking to sequential-thinking-mcp in README examples
+
+### ⚙️ Miscellaneous Tasks
+
+- Remove version specifiers from dev dependencies in lock file
+
 ## [0.7.0] - 2025-07-02
 
 ### 🚀 Features
@@ -15,6 +25,7 @@ All notable changes to this project will be documented in this file.
 ### 📚 Documentation
 
 - Add comprehensive README with setup, usage and features
+- Update changelog for v0.7.0 with docker setup and readme improvements
 
 ## [0.6.2] - 2025-06-26
 
