@@ -2,11 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.7.0] - 2025-07-02
+
+### 🚀 Features
+
+- Rework docker setup and update readme instructions
+
+### 🐛 Bug Fixes
+
+- Update test assertion to use new result.content format
+
+### 📚 Documentation
+
+- Add comprehensive README with setup, usage and features
+
 ## [0.6.2] - 2025-06-26
 
 ### 🚜 Refactor
 
 - Improve thought logging with better handling of optional tool and next step fields
+
+### 📚 Documentation
+
+- Update changelog for v0.6.2 with improved thought logging
 
 ## [0.6.1] - 2025-06-22
 
