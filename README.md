@@ -125,16 +125,16 @@ Configuration:
   "mcpServers": {
     ...
     # with stdio (only requires uv)
-    "mcp-sequential-thinking": {
+    "sequential-thinking-mcp": {
       "command": "uvx",
       "args": [ "sequential-thinking-mcp" ]
     },
     # with sse transport (requires installation)
-    "mcp-sequential-thinking": {
+    "sequential-thinking-mcp": {
       "serverUrl": "http://127.0.0.1:8000/sse"
     },
     # with streamable-http transport (requires installation)
-    "mcp-sequential-thinking": {
+    "sequential-thinking-mcp": {
       "serverUrl": "http://127.0.0.1:8000/mcp" # not yet supported by every client
     },
     ...
