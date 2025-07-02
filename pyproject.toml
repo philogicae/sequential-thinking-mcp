@@ -17,7 +17,7 @@ DeepWiki = "https://deepwiki.com/philogicae/sequential-thinking-mcp"
 sequential-thinking-mcp = "sequential_thinking.__main__:cli"
 
 [dependency-groups]
-dev = ["ruff>=0.12.0", "pytest>=8.4.1", "pytest-asyncio>=1.0.0", "mypy>=1.16.1"]
+dev = ["ruff", "pytest", "pytest-asyncio", "mypy"]
 
 [tool.hatch.build]
 include = ["sequential_thinking"]
