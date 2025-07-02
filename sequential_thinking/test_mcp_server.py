@@ -26,4 +26,4 @@ async def test_think(mcp_client: Client[Any]) -> None:
                 "left_to_be_done": "Summarize the findings to respond to the user",
             },
         )
-        assert result is not None and len(result[0].text) > 32
+        assert result is not None and len(result.content[0].text) > 32
