@@ -9,6 +9,8 @@
 
 This repository provides an MCP (Model Context Protocol) server that enables an AI agent to perform advanced meta-cognition and dynamic, reflective problem-solving.
 
+This version of Sequential Thinking is quite different than the original one, as it only forces the agent to virtually log its thoughts and plans, without actually doing anything, except prompting itself. I found it to be sufficient enough for any kind of LLMs.
+
 <a href="https://glama.ai/mcp/servers/@philogicae/sequential-thinking-mcp">
   <img width="380" height="200" src="https://glama.ai/mcp/servers/@philogicae/sequential-thinking-mcp/badge?cache-control=no-cache" alt="Sequential Thinking MCP" />
 </a>
@@ -21,6 +23,7 @@ This repository provides an MCP (Model Context Protocol) server that enables an 
   - [Installation](#installation)
     - [Install from PyPI (Recommended)](#install-from-pypi-recommended)
     - [For Local Development](#for-local-development)
+    - [For Docker](#for-docker)
 - [Usage](#usage)
   - [As MCP Server](#as-mcp-server)
   - [Via MCP Clients](#via-mcp-clients)
@@ -35,7 +38,7 @@ This repository provides an MCP (Model Context Protocol) server that enables an 
 -   **Agentic Workflow Orchestration**: Guides AI agents through complex tasks by breaking them into precise, manageable, and traceable steps.
 -   **Iterative Refinement**: Assesses the success of each step and self-corrects if necessary, adapting to new information or errors.
 -   **Proactive Planning**: Utilizes `left_to_be_done` for explicit future state management and task estimation.
--   **Tool Recommendation**: Suggests specific tools to execute planned actions or gather necessary information.
+-   **Tool Recommendation**: Suggests specific tools via `tool_recommendation` to execute planned actions or gather necessary information.
 
 ## Setup
 
@@ -56,8 +59,7 @@ This method is best for using the package as a library or running the server wit
 ```bash
 pip install sequential-thinking-mcp
 ```
-
-2.  Run the MCP server:
+2.  Run the MCP server (default: stdio):
 ```bash
 python -m sequential_thinking
 ```
@@ -74,12 +76,30 @@ cd sequential-thinking-mcp
 ```
 2.  Install dependencies using `uv`:
 ```bash
-uv sync
+uv sync --locked
 ```
 
-3.  Run the MCP server:
+3.  Run the MCP server (default: stdio):
 ```bash
 uv run -m sequential_thinking
+```
+
+#### For Docker
+
+1.  Clone the repository (if you haven't already):
+```bash
+git clone https://github.com/philogicae/sequential-thinking-mcp.git
+cd sequential-thinking-mcp
+```
+
+2.  Build and run the container using Docker Compose (default port: 8000):
+```bash
+docker compose up --build -d
+```
+
+3.  Access container logs:
+```bash
+docker logs sequential-thinking-mcp -f
 ```
 
 ## Usage
@@ -105,16 +125,16 @@ Configuration:
   "mcpServers": {
     ...
     # with stdio (only requires uv)
-    "sequential-thinking-mcp": {
+    "mcp-sequential-thinking": {
       "command": "uvx",
       "args": [ "sequential-thinking-mcp" ]
     },
     # with sse transport (requires installation)
-    "sequential-thinking-mcp": {
+    "mcp-sequential-thinking": {
       "serverUrl": "http://127.0.0.1:8000/sse"
     },
     # with streamable-http transport (requires installation)
-    "sequential-thinking-mcp": {
+    "mcp-sequential-thinking": {
       "serverUrl": "http://127.0.0.1:8000/mcp" # not yet supported by every client
     },
     ...

@@ -3,15 +3,14 @@ name: sequential-thinking-mcp
 services:
   sequential-thinking-mcp:
     container_name: sequential-thinking-mcp
-    build:
-      context: ..
-      dockerfile: docker/Dockerfile
+    build: .
     image: sequential-thinking-mcp
     restart: unless-stopped
     ports:
-      - 8765:8000
+      - 8000:8000
     logging:
       driver: "json-file"
       options:
         max-size: "10m"
         max-file: "3"
+    network_mode: bridge
