@@ -2,15 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
-## [unreleased]
+## [0.8.0] - 2025-07-20
+
+### 🚀 Features
+
+- Improve docstring formatting and clarity in mcp_server.py
 
 ### 🐛 Bug Fixes
 
 - Update package name from mcp-sequential-thinking to sequential-thinking-mcp in README examples
 
+### 📚 Documentation
+
+- Update changelog with package name fix and dependency cleanup
+
 ### ⚙️ Miscellaneous Tasks
 
 - Remove version specifiers from dev dependencies in lock file
+- Optimize GitHub Actions workflow with uv caching and conditional builds
+- Update dependencies
 
 ## [0.7.0] - 2025-07-02
 
