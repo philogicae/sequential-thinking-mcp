@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.8.1] - 2025-08-04
+
+### 💼 Other
+
+- Update dependencies including anyio, certifi, cyclopts and docstring-parser
+
 ## [0.8.0] - 2025-07-20
 
 ### 🚀 Features
@@ -21,6 +27,7 @@ All notable changes to this project will be documented in this file.
 - Remove version specifiers from dev dependencies in lock file
 - Optimize GitHub Actions workflow with uv caching and conditional builds
 - Update dependencies
+- Prepare release v0.8.0 with docstring improvements and workflow optimizations
 
 ## [0.7.0] - 2025-07-02
 
