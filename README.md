@@ -126,6 +126,11 @@ Configuration:
       "command": "uvx",
       "args": [ "sequential-thinking-mcp" ]
     },
+    # with docker (only requires docker)
+    "sequential-thinking-mcp": {
+      "command": "docker",
+      "args": [ "run", "-i", "-p", "8000:8000", "philogicae/sequential-thinking-mcp:latest", "sequential-thinking-mcp" ]
+    },
     # with sse transport (requires installation)
     "sequential-thinking-mcp": {
       "serverUrl": "http://127.0.0.1:8000/sse"

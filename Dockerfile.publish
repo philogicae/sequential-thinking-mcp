@@ -1,0 +1,5 @@
+FROM python:3.13-alpine
+RUN pip install --upgrade pip
+ARG VERSION
+RUN pip install sequential-thinking-mcp==$VERSION
+EXPOSE 8000
