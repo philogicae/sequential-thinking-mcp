@@ -2,9 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.0] - 2025-08-16
+
+### 🚀 Features
+
+- Add Docker image publishing workflow and documentation
+
+### ⚙️ Miscellaneous Tasks
+
+- Update deps
+
 ## [0.8.1] - 2025-08-04
 
 ### 💼 Other
+
+- Update dependencies including anyio, certifi, cyclopts and docstring-parser
+
+### ⚙️ Miscellaneous Tasks
 
 - Update dependencies including anyio, certifi, cyclopts and docstring-parser
 
